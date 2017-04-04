@@ -7,7 +7,7 @@ emil@sallmedia.se<br>
 http://sallmedia.se
 
 ## Theme
-The included theme is a slightly dieted version of [http://underscores.me/](_s) just to have something to start with.
+The included theme is a slightly dieted version of [_s](http://underscores.me/) just to have something to start with.
 
 ## Docker
 
