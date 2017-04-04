@@ -1,0 +1,26 @@
+{
+  "name": "emil-static-site-builder",
+  "version": "1.0.1",
+  "scripts": {
+    "less": "lessc css/style.less css/style.css",
+    "autoprefixer": "postcss -u autoprefixer -r css/style.css",
+    "uglify": "uglifyjs js/lib/*.js js/script.js -m -o js/script.min.js",
+    "build:css": "npm run less && npm run autoprefixer",
+    "build:js": "npm run uglify",
+    "build": "npm run build:css && npm run build:js",
+    "serve": "browser-sync start --proxy 'localhost:8080' --files '*.php, css/style.css, js/script.min.js'",
+    "watch:css": "onchange 'css/style.less' -- npm run build:css",
+    "watch:js": "onchange 'js/script.js' -- npm run build:js",
+    "watch": "parallelshell 'npm run serve' 'npm run watch:css' 'npm run watch:js'"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "browser-sync": "^2.12.7",
+    "less": "^2.7.1",
+    "onchange": "^2.4.0",
+    "parallelshell": "^2.0.0",
+    "postcss-cli": "^2.5.2",
+    "scrollmonitor": "^1.2.3",
+    "uglify-js": "^2.6.2"
+  }
+}
